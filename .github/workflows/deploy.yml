@@ -2,8 +2,9 @@ name: deploy
 on:
   push:
     branches:
-      - master
-      - ci/deploy
+      - 'ci/**'
+    tags:
+      - v**
   workflow_dispatch:
 
 permissions:
