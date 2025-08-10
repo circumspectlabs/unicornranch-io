@@ -1,7 +1,9 @@
 name: deploy
 on:
   push:
-    branches: ["master"]
+    branches:
+      - master
+      - ci/deploy
   workflow_dispatch:
 
 permissions:
@@ -19,11 +21,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
+      - name: Build .env file
         run: |
-          echo "manager=npm" >> $GITHUB_OUTPUT
-          echo "command=ci" >> $GITHUB_OUTPUT
+          rm .env || true
+          touch .env
+
+          cat <<EOF > .env
+          NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}
+          NUXT_PUBLIC_SITE_URL=https://unicornranch.io
+          NUXT_SITE_NAME=unicornranch.io
+          NUXT_SITE_INDEXABLE=false
+          EOF
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -31,8 +39,6 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: nuxt
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -43,9 +49,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: npm ci
       - name: Static HTML export with Nuxt
-        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
+        run: npm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
