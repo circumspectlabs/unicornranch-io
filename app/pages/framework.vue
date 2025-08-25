@@ -105,12 +105,6 @@ defineOgImageComponent('Og', {
   </div>
 </template>
 
-<!--
-  TODO:
-    1. Highlight some important words (accent)
-    2. Deutsch
--->
-
 <i18n lang="yaml">
 en:
   __title: The Framework

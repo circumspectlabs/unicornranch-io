@@ -63,10 +63,8 @@ watch(locale, async (v, _) => {
     <template #right>
       <UColorModeButton />
 
-      <UButton
-        :label="t('__label_sign_up')"
-        color="neutral"
-        class="hidden lg:inline-flex"
+      <SignUpModal
+        button="header_sign_up"
       />
 
       <LocaleSelect
@@ -79,12 +77,6 @@ watch(locale, async (v, _) => {
   </UHeader>
 </template>
 
-<!--
-  TODO:
-    1. Handler for Sign Up button with the webhook that the button had been pressed and invite to fill out a quick form for pre-registration
-    2. After pre-registration, show something awesome to encourage people to get back
--->
-
 <i18n lang="yaml">
 en:
   __label_framework: Framework
@@ -92,12 +84,10 @@ en:
   __label_how_it_works: How It Works
   __label_pricing: Pricing
   __label_faq: FAQ
-  __label_sign_up: Sign Up
 de:
   __label_framework: Framework
   __label_product: Produkt
   __label_how_it_works: Wie Functioniert Es
   __label_pricing: Preise
   __label_faq: FAQ
-  __label_sign_up: Anmelden
 </i18n>

@@ -45,6 +45,7 @@ interface Plan {
   highlight?: boolean
   scale?: boolean
   button: {
+    button: string
     label: string
     color?: 'neutral' | 'primary' | 'secondary'
     variant?: 'subtle' | 'link' | 'solid' | 'outline' | 'soft' | 'ghost' | undefined
@@ -63,6 +64,7 @@ const plans = computed<Plan[]>(() => [
       year: '$80'
     },
     button: {
+      button: 'pricing_starter_sign_up',
       label: 'Request Trial',
       color: 'neutral',
       variant: 'subtle'
@@ -98,6 +100,7 @@ const plans = computed<Plan[]>(() => [
     highlight: true,
     scale: true,
     button: {
+      button: 'pricing_pro_sign_up',
       label: 'Get Started'
     },
     features: [
@@ -129,6 +132,7 @@ const plans = computed<Plan[]>(() => [
       year: '$200'
     },
     button: {
+      button: 'pricing_enterprise_sign_up',
       label: 'Get Started',
       color: 'neutral',
       variant: 'subtle'
@@ -240,26 +244,33 @@ const faqActive = ref([...Array(faquestions.value.length).keys().map((e: number)
               </UTooltip>
             </li>
           </template>
+
+          <template #button>
+            <SignUpModal
+              v-bind="plan.button"
+              button-class="w-full"
+              :extra="{
+                is_yearly: isYearly
+              }"
+            />
+          </template>
         </UPricingPlan>
       </UPricingPlans>
     </UContainer>
 
     <UPageHero
       :title="t('__section_more_title')"
-      :links="[
-        {
-          label: t('__section_more_button'),
-          icon: 'i-lucide-arrow-right',
-          trailing: true,
-          size: 'lg',
-          onClick: () => { console.log('CONTACT_SALES CLICK') }, // TODO
-          class: 'cursor-pointer text-lg'
-        }
-      ]"
       class="mt-10 mb-0"
     >
       <template #description>
         <p v-html="t('__section_more_description')" />
+      </template>
+
+      <template #links>
+        <ContactModal
+          button-class="cursor-pointer text-lg"
+          size="lg"
+        />
       </template>
     </UPageHero>
 
@@ -275,7 +286,10 @@ const faqActive = ref([...Array(faquestions.value.length).keys().map((e: number)
         class="max-w-4xl mx-auto"
       >
         <template #content="{ item }">
-          <p class="pb-3.5 text-muted accordeon-content" v-html="item.content" />
+          <p
+            class="pb-3.5 text-muted accordeon-content"
+            v-html="item.content"
+          />
         </template>
       </UPageAccordion>
     </UPageSection>
@@ -292,13 +306,6 @@ const faqActive = ref([...Array(faquestions.value.length).keys().map((e: number)
   text-decoration-style: solid;
 }
 </style>
-
-<!--
-  TODO:
-    1. Handlers for every pricing button
-    2. Contact sales button
-    3. Deutsch
--->
 
 <i18n lang="yaml">
 en:

@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { useAnchorScroll } from '#imports'
 import type { ButtonProps } from '@nuxt/ui'
+
 import * as productConfig from '@/product.config'
 
 const { t } = useI18n({
@@ -194,17 +195,11 @@ const features = computed<Features>(() => ({
 interface CTA {
   title: string
   description: string
-  links: ButtonProps[]
+  links?: ButtonProps[]
 }
 const cta = computed<CTA>(() => ({
   title: 'Sign Up for Private Launch!',
   description: 'We are starting very soon! Sign up to not miss the private launch of the best marketing insights tool!',
-  links: [
-    {
-      label: 'Sign Up',
-      onClick: () => {} // TODO: handler for this button
-    }
-  ]
 }))
 </script>
 
@@ -282,15 +277,16 @@ const cta = computed<CTA>(() => ({
       }"
     >
       <div class="absolute rounded-full dark:bg-primary blur-[250px] size-40 sm:size-50 transform -translate-x-1/2 left-1/2 -translate-y-80" />
+
+      <template #links>
+        <SignUpModal
+          button="index_cta_sign_up"
+          size="xl"
+        />
+      </template>
     </UPageCTA>
   </div>
 </template>
-
-<!--
-  TODO:
-    1. Deutsch translation
-    2. Add Sign Up handler, better to import from Header component
--->
 
 <style lang="css">
 .__hero_bg {

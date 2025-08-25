@@ -94,10 +94,6 @@ const faquestions = computed<FAQuestion[]>(() => [
     label: 'Can I customize the branding and style?',
     content: 'To simplify the experiments, we provide an AI-generated branding for every new experiment. You can override it with your own branding and/or adjust it in place with your own name, logo, colors, and typography.'
   },
-  // {
-  //   label: 'What platforms can it auto-create accounts and pages on (e.g., LinkedIn, X, Reddit)?',
-  //   content: 'TODO'
-  // },
   {
     label: 'How does it handle budget allocation and spend optimization?',
     content: 'You can specify the budget for the experiment, and the product will split it to chunks, using every chunk with some ads vendor and traffic configuration. Depending on the success factor of such micro-campaigns, it continues research until identifies the best possible configuration. The experiment ends when the budget runs out or the best configuration has been found, depending on what’s first.'

@@ -34,6 +34,12 @@ export default defineNuxtConfig({
     indexable: indexable()
   },
 
+  runtimeConfig: {
+    public: {
+      CTABackend: process.env.NUXT_CTA_BACKEND_URL || 'http://localhost:8012'
+    }
+  },
+
   compatibilityDate: '2025-06-01',
 
   nitro: {
