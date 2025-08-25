@@ -10,38 +10,44 @@ export const hideTheseParams = [
 ]
 
 export const persistCampaignParams = (params: UrlParams) => {
-  Object.keys(params).filter(value => hideTheseParams.includes(value)).forEach((value) => {
-    if (params[value]) {
-      if (Array.isArray(params[value])) {
-        if (params[value][0]) {
-          localStorage.setItem(`campaign_${value}`, params[value][0])
+  if (import.meta.client) {
+    Object.keys(params).filter(value => hideTheseParams.includes(value)).forEach((value) => {
+      if (params[value]) {
+        if (Array.isArray(params[value])) {
+          if (params[value][0]) {
+            localStorage.setItem(`campaign_${value}`, params[value][0])
+          }
+        } else {
+          localStorage.setItem(`campaign_${value}`, params[value])
         }
-      } else {
-        localStorage.setItem(`campaign_${value}`, params[value])
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+          delete params[value]
+        } finally { /* empty */ }
       }
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-        delete params[value]
-      } finally { /* empty */ }
-    }
-  })
+    })
+  }
 }
 
 export const getCampaignParams = () => {
   const r: Record<string, string> = {}
-  hideTheseParams.forEach((value) => {
-    const data = localStorage.getItem(`campaign_${value}`)
-    if (data) {
-      r[value] = data
-    }
-  })
+  if (import.meta.client) {
+    hideTheseParams.forEach((value) => {
+      const data = localStorage.getItem(`campaign_${value}`)
+      if (data) {
+        r[value] = data
+      }
+    })
+  }
   return r
 }
 
 export const deleteCampaignParams = () => {
-  hideTheseParams.forEach((value) => {
-    localStorage.removeItem(`campaign_${value}`)
-  })
+  if (import.meta.client) {
+    hideTheseParams.forEach((value) => {
+      localStorage.removeItem(`campaign_${value}`)
+    })
+  }
 }
 
 export const getNonCampaignParams = (params: UrlParams, route: RouteLocationNormalizedLoadedGeneric) => {
@@ -68,13 +74,17 @@ export const getNonCampaignParams = (params: UrlParams, route: RouteLocationNorm
 }
 
 export const getSessionUuid = () => {
-  const itemName = 'campaign_session_uuid'
-  let uuid: string | null = localStorage.getItem(itemName)
-  if (uuid) {
-    return uuid
+  if (import.meta.client) {
+    const itemName = 'campaign_session_uuid'
+    let uuid: string | null = localStorage.getItem(itemName)
+    if (uuid) {
+      return uuid
+    } else {
+      uuid = crypto.randomUUID()
+      localStorage.setItem(itemName, uuid)
+      return uuid
+    }
   } else {
-    uuid = crypto.randomUUID()
-    localStorage.setItem(itemName, uuid)
-    return uuid
+    return crypto.randomUUID()
   }
 }

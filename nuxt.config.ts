@@ -46,7 +46,8 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
-        '/robots.txt'
+        '/robots.txt',
+        '/_ipx/_/svg/sign-up.svg'
       ].concat(iconset.icons.map(item => `/icons/${item.name}`)),
       crawlLinks: true
     }

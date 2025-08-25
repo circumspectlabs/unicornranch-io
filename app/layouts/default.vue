@@ -8,17 +8,19 @@ const route = useRoute()
 const params = useUrlSearchParams('history')
 
 const handleVisit = () => {
-  $fetch(`${CTABackend}/api/v1/cta/visit`, {
-    method: 'POST',
-    body: Object.assign(
-      {},
-      CTA.getCampaignParams(),
-      CTA.getNonCampaignParams(params, route),
-      {
-        version: 'v1'
-      }
-    )
-  })
+  if (import.meta.client) {
+    $fetch(`${CTABackend}/api/v1/cta/visit`, {
+      method: 'POST',
+      body: Object.assign(
+        {},
+        CTA.getCampaignParams(),
+        CTA.getNonCampaignParams(params, route),
+        {
+          version: 'v1'
+        }
+      )
+    })
+  }
 }
 
 CTA.persistCampaignParams(params)
