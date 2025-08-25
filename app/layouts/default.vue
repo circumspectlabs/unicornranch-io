@@ -16,7 +16,8 @@ const handleVisit = () => {
         CTA.getCampaignParams(),
         CTA.getNonCampaignParams(params, route),
         {
-          version: 'v1'
+          version: 'v1',
+          path: route.path
         }
       )
     })

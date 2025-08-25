@@ -47,7 +47,8 @@ const handleForm = async (event: FormSubmitEvent<Schema>) => {
       {
         version: 'v1',
         button: props.button,
-        email: email
+        email: email,
+        path: route.path
       }
     )
   }).then(() => {

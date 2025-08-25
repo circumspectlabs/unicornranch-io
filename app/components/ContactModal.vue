@@ -53,7 +53,8 @@ const handleForm = async (event: FormSubmitEvent<Schema>) => {
         version: 'v1',
         email: email,
         title: title,
-        message: message
+        message: message,
+        path: route.path
       }
     )
   }).then(() => {

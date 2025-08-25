@@ -35,7 +35,8 @@ const handleForm = async (event: FormSubmitEvent<Schema>) => {
       CTA.getNonCampaignParams(params, route),
       {
         version: 'v1',
-        email: email
+        email: email,
+        path: route.path
       }
     )
   }).then(() => {
