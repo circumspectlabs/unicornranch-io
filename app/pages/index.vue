@@ -142,7 +142,7 @@ interface Features {
 }
 const features = computed<Features>(() => ({
   title: 'How It Works?',
-  description: 'For decades, it was a clear marketing experimentation pipeline described in our framework. It usually was affordable only for big players because of wage costs. In the AI epoch, you can automate most part of this work! We just make it simple!',
+  description: 'For decades, it was a clear marketing research pipeline described in our framework. It usually was affordable only for big players because of wage costs. In the AI epoch, you can automate most part of this work! We just make it simple!',
   items: [
     {
       title: '1. Idea Definition',
@@ -156,7 +156,7 @@ const features = computed<Features>(() => ({
     },
     {
       title: '3. Landing Page',
-      description: 'Generate the landing page that suites best for your product. You can even improve it to your special needs, with prompts.',
+      description: 'Generate the landing page that suites best for your product. You can even improve it to your special needs, with prompts and/or custom content.',
       icon: 'i-lucide-layout-panel-top'
     },
     {
@@ -166,27 +166,27 @@ const features = computed<Features>(() => ({
     },
     {
       title: '5. Budget and Strategy',
-      description: 'Define the experiment\'s budget and pick one of the experiment strategies. It can automatically adjust campaign settings to find the best configuration.',
+      description: 'Define the research budget and pick preferable strategy. While running the research, it will automatically adjust campaign settings to find the best configuration.',
       icon: 'i-lucide-sigma'
     },
     {
       title: '6. Campaign Launch',
-      description: 'Launch your campaign and watch how experiment runs small paid ad campaigns and gains visits of real customers.',
+      description: 'Launch your campaign and watch how your landing page gains visits of real customers and CTA activities.',
       icon: 'i-lucide-rocket'
     },
     {
-      title: '7. Collect Insights!',
-      description: 'Just let it some time and you will obtain the most valuable knowledge about your product: the people who love it and would like to try.',
+      title: '7. Watch it Works!',
+      description: 'The smart campaign controller analyzes response and updates traffic settings to identify the most effective marketing channels settings!',
       icon: 'i-lucide-brain-cog'
     },
     {
-      title: '8. Analyze Market Response',
-      description: 'Using the experiment data, make a mindful decisions about your next steps, how to improve your product, and where to seek for your best customer.',
-      icon: 'i-lucide-chart-bar'
+      title: '8. Collect Insights!',
+      description: 'After some time, you obtain the most valuable knowledge about your product: the people who love it and would like to try.',
+      icon: 'i-lucide-chart-no-axes-combined'
     },
     {
-      title: '9. Start New Experiment!',
-      description: 'You can reuse the campaign, adjust with new settings, and find even more fruitful and winning market!',
+      title: '9. Analyze, Adjust, Repeat',
+      description: 'On the ending cycles of research, you can mindfully decide about market fit or pivot. You can repeat the research with new settings as much times as you need.',
       icon: 'i-lucide-calendar-sync'
     }
   ]
@@ -199,7 +199,7 @@ interface CTA {
 }
 const cta = computed<CTA>(() => ({
   title: 'Sign Up for Private Launch!',
-  description: 'We are starting very soon! Sign up to not miss the private launch of the best marketing insights tool!',
+  description: 'We are starting very soon! Sign up to not miss the private launch of the best marketing insights tool!'
 }))
 </script>
 
@@ -298,11 +298,11 @@ const cta = computed<CTA>(() => ({
 
 <i18n lang="yaml">
 en:
-  __title: The Fastest Way to Test Your Product Ideas
-  __title_og: The Fastest Way to Test Your Product Ideas
+  __title: The Smart and Effective Way to Test Product Ideas
+  __title_og: The Smart and Effective Way to Test Product Ideas
   __description: The tool that helps founders, entrepreneurs, and market researchers quickly test product and service ideas in real market conditions — without spending weeks on setup and guesswork — and obtain the exhaustive details about your ideal customer profile.
-  __hero_title: The Easiest Way to <span class="text-nowrap text-primary-400">Test Product Ideas</span>
-  __hero_description: The tool that helps founders, entrepreneurs, and market researchers quickly test <span class="text-nowrap text-primary-400 font-[500]">product and service ideas</span> in real market conditions — <span class="text-nowrap text-primary-400 font-[500]">without spending weeks</span> on setup and guesswork — and obtain the exhaustive details about your <span class="text-nowrap text-primary-400 font-[500]">ideal customer profile</span>.
+  __hero_title: The Smart and Effective Way to <span class="text-nowrap text-primary-400">Test Product Ideas</span>
+  __hero_description: The tool that helps founders, entrepreneurs, and market researchers quickly test <span class="text-nowrap text-primary-400 font-[500]">product and service ideas</span> in real market conditions — <span class="text-nowrap text-primary-400 font-[500]">without spending weeks</span> on setup and guesswork — and obtain the exhaustive details about your <span class="text-nowrap text-primary-400 font-[500]">ideal customer profile</span> and <span class="text-nowrap text-primary-400 font-[500]">successful marketing channels</span>.
   __hero_link: 'How it works?'
   __how_it_works_link_framework: "Framework"
   __how_it_works_link_more_details: "More Details"

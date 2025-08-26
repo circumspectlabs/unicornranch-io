@@ -27,12 +27,24 @@ interface FAQuestion {
 }
 const faquestions = computed<FAQuestion[]>(() => [
   {
+    label: 'What\'s the value of these experiments?',
+    content: 'The main value of these marketing experiments is identifying the level of interest to your product idea in the close to real environment. That\'s how you acquire the essential information about your <a href="https://www.qualtrics.com/experience-management/brand/ideal-customer-profile/" target="_blank">Ideal Customer Profile (ICP)</a> and <a href="https://corporatefinanceinstitute.com/resources/management/serviceable-obtainable-market-som/" target="_blank">Servicable Obtainable Market (SOM)</a>.'
+  },
+  {
+    label: 'What\'s the value of this product?',
+    content: 'By the automation of these experiments, you can effortlessly run <span class="text-primary">representative experiments</span> even without experience in marketing and building brands and sites. Everything is already automated and ready to go. You only need to explain your idea, confirm/adjust AI-generated marketing artifacts (name, logo, landing page, domain, etc), and set some budget for customer acquisition.'
+  },
+  {
     label: 'What exactly does this platform do, and how is it different from just using no-code tools or freelancers?',
-    content: 'No-code and vibe code solutions are not effortless. And with freelancers, traditional methods are also time-consuming. The product just consolidates everything in one place, streamlines the research process, simplifies the management of your research process, and maximizes the effects of your efforts. You can just do more and obtain deeper results.'
+    content: 'No-code and vibe coding solutions are not effortless. And with freelancers, traditional methods are also time-consuming. The product consolidates everything in one place, streamlines the research process, simplifies the management of your research process, and maximizes the effects of your efforts. You can do more and obtain deeper results.'
+  },
+  {
+    label: 'What\'s the price of one experiment?',
+    content: 'It consists of three parts: single time <span class="text-primary">research activation</span> (actually the initial landing page and brand generation), the <span class="text-primary">ads budget</span> (just a small amount of paid traffic), and small <span class="text-primary">monthly upkeep fee</span>. The nature of the experiment assumes that you buy insignifiant amount of traffic on different platforms, such as Google Ad Words, Facebook Ads, Instagram, etc, to identify the real interest to your product and the behavior of the chosen customer profile (traffic settings).'
   },
   {
     label: 'How much input do I need to give before the campaign can launch?',
-    content: 'Depending on the complexity of the product, you need 1-3 hours for launching the first campaign. The next campaigns will be easier to prepare, should be 20-30 minutes.'
+    content: 'Depending on the complexity of the product, you need 1-4 hours for launching the first research. After it\'s done, the product will do the rest: enabling paid traffic campaigns, adjusting them, declining inffective traffic sources, and identifying the most effective marketing channels.'
   },
   {
     label: 'Can I use this even if I have zero marketing experience?',
@@ -44,19 +56,19 @@ const faquestions = computed<FAQuestion[]>(() => [
   },
   {
     label: 'How flexible is it if I want to run multiple experiments with slightly different audiences or messages?',
-    content: 'It performs multi-step campaigns and analyses the traction. Then, it can choose the next step and perform another micro-research, collect more data, and pass through the whole marketing campaign. You can watch the process online and adjust the campaign.'
+    content: 'It performs multiple micro-researches in row and analyses the traction. Then, it can choose the next step and perform another micro-research, collect another data, and decide if it\'s more effective or not. You can watch the progress and adjust the strategy manually if necessary.'
   },
   {
     label: 'How long does it take to go from idea to launched campaign?',
-    content: 'To configure your first campaign, you usually need to enter the product description, then confirm/adjust essential marketing artifacts (product description, name, logo, and landing page), then configure budget. For the first time, it usually takes a few hours before you can launch the campaign. After the campaign has finished, you can reuse/adjust its artifacts for the new campaign, which will be a way faster.'
+    content: 'To configure your first campaign, you usually need to enter the product description, then confirm/adjust essential marketing artifacts (product description, name, logo, and landing page), then configure budget and strategy. For the first time, it usually takes a few hours.'
   },
   {
-    label: 'Can I run campaigns in different languages or for different geographies?',
+    label: 'Can I run researches in different languages or for different geographies?',
     content: 'Yes, you can build multi-language landing pages. It will be automatically translated to these languages (with AI). Then you can limit ads campaigns to some geo zone.'
   },
   {
     label: 'What kind of output will I get at the end of a campaign?',
-    content: 'Every experiment collects raw marketing data and provides the analysis with the conversion rates, sources of traffic with scoring by conversion, ROI by the channel, expected SOM/TAM rate, and other essential information about the experiment and campaign traction.'
+    content: 'Every research collects raw marketing data and provides the analysis with the conversion rates, sources of traffic with scoring by conversion, ROI by the channel, expected SOM/TAM rate, and other essential information about the experiment and its traction.'
   },
   {
     label: 'What does “automated” actually mean here — what’s done for me, and what still needs manual work?',
@@ -64,7 +76,7 @@ const faquestions = computed<FAQuestion[]>(() => [
   },
   {
     label: 'How will this help me validate if there’s real market interest in my product?',
-    content: 'Every experiment provides the essential data about the marketing landscape for the product/service/idea you want to run. Knowing the market, you can implement more precise revenue strategy.'
+    content: 'Every experiment collects data how people react on your product, how the behave on the landing page. Using that statistic, the product measures the interest in your product and tries to identify the most effective merketing channels configuration.'
   },
   {
     label: 'What kind of metrics or KPIs will I get to determine whether an idea is worth pursuing?',
@@ -72,19 +84,19 @@ const faquestions = computed<FAQuestion[]>(() => [
   },
   {
     label: 'Does this tool help me compare multiple product ideas objectively?',
-    content: 'Yes. You compare finished experiments by the metrics, such as conversion rates and serviceable obtainable market.'
+    content: 'Yes. You compare experiments by the metrics, such as conversion rates and serviceable obtainable market.'
   },
   {
     label: 'Will I actually get leads, or just vanity metrics like clicks and impressions?',
-    content: 'Yes, you can acquire leads if they subscribed for waitlist or signed up. It’s usually useful having a talk with such people, to collect extra details and adjust the further research campaigns.'
+    content: 'Yes, you can acquire leads if they subscribed for waitlist, signed up, or requested for contact. It’s usually useful having a talk with such people, to collect extra details and adjust the further research campaigns.'
   },
   {
     label: 'Can I share campaign results with my team or investors?',
-    content: 'Yes. You can share access to your tenant (where you perform research) and/or generate a report for the particular campaign.'
+    content: 'Yes. You can share access to your research data and/or generate a report for the particular campaign.'
   },
   {
     label: 'Will it help me iterate based on results or just give me a single campaign?',
-    content: 'Single campaign is useful, but it’s normal iterating similar campaigns one by one, to identify ads traffic configuration with the best conversion.'
+    content: 'Single campaign already includes iterations of marketing campaigns with different settings. It\'s quite effective to use single research for single product/service/idea. However, you can setup multiple researches for different products/services/ideas. In other words, you can run multiple researches simultaneusly.'
   },
   {
     label: 'Does it generate the landing page from scratch, or do I have to provide copy and design?',
@@ -96,35 +108,31 @@ const faquestions = computed<FAQuestion[]>(() => [
   },
   {
     label: 'How does it handle budget allocation and spend optimization?',
-    content: 'You can specify the budget for the experiment, and the product will split it to chunks, using every chunk with some ads vendor and traffic configuration. Depending on the success factor of such micro-campaigns, it continues research until identifies the best possible configuration. The experiment ends when the budget runs out or the best configuration has been found, depending on what’s first.'
+    content: 'You can specify the monthly budget for the research, and the product will consume it for different micro-researches. Depending on the success factor of such micro-researches, it continues until identifies the best possible marketing channel configuration.'
   },
   {
     label: 'Will it alert me if the campaign is underperforming or wasting money?',
-    content: 'For sure. In case no success or too low conversion, it can stop or notify the experiment. The alert/action thresholds are configurable.'
-  },
-  {
-    label: 'Can I A/B test different value propositions or landing page versions?',
-    content: 'Yes, with two parallel experiments.'
+    content: 'For sure. In case no success or too low conversion, it can stop or notify about it. The alert/action thresholds are configurable.'
   },
   {
     label: 'How is my product idea kept confidential?',
     content: 'The data, as well as ideas and experiment results, are entirely your. We don’t share it to third parties.'
   },
   {
-    label: 'What happens to my data after the campaign ends?',
-    content: 'It remains inactive in the experiments’ history. You can also start a new experiment by forking the existing experiment, even if it’s finished.'
+    label: 'What happens to my data after the campaign ends/stops?',
+    content: 'It remains inactive and doesn\'t consumes anything. You can also restart or continue the research.'
   },
   {
     label: 'Can I export the results and reuse the assets outside the platform?',
-    content: 'Yes, you can export brand artifacts (name, logo, style, etc), and landing page (limited). However, before running this landing page outside the application, you will have to partially rework it (CTA handlers, subscription, analytics, etc).'
+    content: 'Yes, you can export brand artifacts (name, logo, style, etc), and landing page (limited). However, before running this landing page outside the application, you will have to partially rework it (CTA handlers, analytics, etc).'
   },
   {
     label: 'Can my team collaborate inside the tool?',
-    content: 'Yes. Depending on the subscription, you have a limited number of members in a single tenant.'
+    content: 'Yes. Depending on the research billing plan, you have a limited number of members participating in a single research.'
   },
   {
-    label: 'How does this scale if I run 10, 50, or 100 product experiments a month?',
-    content: 'The number of parallel experiments is limited depending on the subscription plan.'
+    label: 'How does this scale if I run 5, 10, or 25 product experiments a month?',
+    content: 'You can run any number of parallel researches. The limitations are applicable to every particular research and depend on research billing plan.'
   },
   {
     label: 'Is there a white-label option for agencies or firms?',
@@ -136,11 +144,7 @@ const faquestions = computed<FAQuestion[]>(() => [
   },
   {
     label: 'Does it integrate with my existing analytics tools or CRM?',
-    content: 'No. It runs the separated experiments. You may need to provide credentials to your existing ads platforms. You can also download the list of subscribers and registered users and upload it into your CRM.'
-  },
-  {
-    label: 'What’s included in the subscription plan? Do I need to pay for ads campaigns separately?',
-    content: '<p>Every experiment requires some budget for paid traffic. It is a separate part of expenses you should keep in mind. The product automates all busywork around establishing and controlling the experiment flow. In other words, the product performs research using the experiment\'s budget.</p><p>So, yes, the subscription plan doesn’t include the paid traffic.</p>'
+    content: 'You can download the list of subscribers and registered users and upload it into your CRM. It\'s available via API intergration.'
   },
   {
     label: 'Do I need to bring my own ad accounts or can I use one provided by the platform?',
@@ -152,7 +156,7 @@ const faquestions = computed<FAQuestion[]>(() => [
   },
   {
     label: 'Is onboarding guided or self-serve?',
-    content: 'Guided. You can disable it, but it’s strongly recommended to follow this guide for the first experiments. The configuration process is quite flexible and suites for both beginners and professionals in the marketing space.'
+    content: 'Guided. You can disable it, but it’s strongly recommended to follow this guide while you setup a research. The configuration process is quite flexible and suites for both beginners and professionals in the marketing space.'
   },
   {
     label: 'How much time should I expect to spend on setup and review?',
