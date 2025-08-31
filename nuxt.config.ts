@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     'nuxt-seo-utils',
-    'v-satori/nuxt'
+    'v-satori/nuxt',
+    'nuxt-gtag'
   ],
 
   devtools: {
@@ -87,6 +88,10 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  gtag: {
+    id: 'G-8J6ZSDVNXD'
   },
 
   i18n: {
