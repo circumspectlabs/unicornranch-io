@@ -32,7 +32,7 @@ jobs:
           NUXT_PUBLIC_SITE_URL=https://unicornranch.io
           NUXT_CTA_BACKEND_URL=https://cta.unicornranch.io
           NUXT_SITE_NAME=unicornranch.io
-          NUXT_SITE_INDEXABLE=false
+          NUXT_SITE_INDEXABLE=true
           EOF
       - name: Setup Node
         uses: actions/setup-node@v4
